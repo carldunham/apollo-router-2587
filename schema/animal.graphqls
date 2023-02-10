@@ -1,0 +1,17 @@
+schema {
+  query: Query
+}
+
+type Query {
+  animal: Animal!
+  dog: Dog!
+}
+
+interface Animal {
+  id: String!
+}
+
+type Dog implements Animal {
+  id: String!
+  name: String!
+}

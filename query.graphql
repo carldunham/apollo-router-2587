@@ -1,0 +1,22 @@
+query animal {
+  animal {
+    ... on Dog {
+      name
+      ... on Animal {
+        id
+      }
+    }
+  }
+}
+
+query dog {
+  dog {
+    ... on Animal {
+      id
+      # __typename
+      ... on Dog {
+        name
+      }
+    }
+  }
+}
