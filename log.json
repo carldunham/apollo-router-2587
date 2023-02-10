@@ -1,0 +1,176 @@
+[
+  {
+    "timestamp": "2023-02-10T22:42:20.353514Z",
+    "level": "INFO",
+    "message": "Supergraph request body",
+    "http.request.body": "Request { query: Some(\"query dog {\\n  dog {\\n    ... on Animal {\\n      id\\n      # __typename\\n      ... on Dog {\\n        name\\n      }\\n    }\\n  }\\n}\\n\"), operation_name: Some(\"dog\"), variables: {}, extensions: {} }",
+    "target": "apollo_router::plugins::telemetry",
+    "filename": "apollo-router/src/plugins/telemetry/mod.rs",
+    "line_number": 907,
+    "span": {
+      "apollo_private.http.request_headers": "{}",
+      "client.name": "",
+      "client.version": "",
+      "http.flavor": "HTTP/1.1",
+      "http.method": "POST",
+      "http.route": "/",
+      "otel.kind": "INTERNAL",
+      "trace_id": "d5c829d3c83ea3b301652c253257d7c8",
+      "name": "router"
+    },
+    "spans": [
+      { "http.flavor": "HTTP/1.1", "http.method": "POST", "http.route": "/", "otel.kind": "SERVER", "name": "request" },
+      {
+        "apollo_private.http.request_headers": "{}",
+        "client.name": "",
+        "client.version": "",
+        "http.flavor": "HTTP/1.1",
+        "http.method": "POST",
+        "http.route": "/",
+        "otel.kind": "INTERNAL",
+        "trace_id": "d5c829d3c83ea3b301652c253257d7c8",
+        "name": "router"
+      }
+    ]
+  },
+  {
+    "timestamp": "2023-02-10T22:42:20.369758Z",
+    "level": "INFO",
+    "message": "Request body to subgraph \"animal\"",
+    "http.request.body": "Body(Full(b\"{\\\"query\\\":\\\"query dog__animal__0{dog{id name}}\\\",\\\"operationName\\\":\\\"dog__animal__0\\\"}\"))",
+    "apollo.subgraph.name": "animal",
+    "target": "apollo_router::services::subgraph_service",
+    "filename": "apollo-router/src/services/subgraph_service.rs",
+    "line_number": 296,
+    "span": {
+      "apollo.subgraph.name": "animal",
+      "graphql.document": "query dog__animal__0{dog{id name}}",
+      "graphql.operation.name": "dog__animal__0",
+      "otel.kind": "INTERNAL",
+      "name": "subgraph"
+    },
+    "spans": [
+      { "http.flavor": "HTTP/1.1", "http.method": "POST", "http.route": "/", "otel.kind": "SERVER", "name": "request" },
+      {
+        "apollo_private.http.request_headers": "{}",
+        "client.name": "",
+        "client.version": "",
+        "http.flavor": "HTTP/1.1",
+        "http.method": "POST",
+        "http.route": "/",
+        "otel.kind": "INTERNAL",
+        "trace_id": "d5c829d3c83ea3b301652c253257d7c8",
+        "name": "router"
+      },
+      {
+        "apollo_private.field_level_instrumentation_ratio": 0.01,
+        "apollo_private.graphql.variables": "{}",
+        "graphql.document": "query dog {\n  dog {\n    ... on Animal {\n      id\n      # __typename\n      ... on Dog {\n        name\n      }\n    }\n  }\n}\n",
+        "graphql.operation.name": "dog",
+        "otel.kind": "INTERNAL",
+        "name": "supergraph"
+      },
+      { "otel.kind": "INTERNAL", "name": "execution" },
+      {
+        "apollo.subgraph.name": "animal",
+        "apollo_private.sent_time_offset": 16202757,
+        "otel.kind": "INTERNAL",
+        "name": "fetch"
+      },
+      {
+        "apollo.subgraph.name": "animal",
+        "graphql.document": "query dog__animal__0{dog{id name}}",
+        "graphql.operation.name": "dog__animal__0",
+        "otel.kind": "INTERNAL",
+        "name": "subgraph"
+      }
+    ]
+  },
+  {
+    "timestamp": "2023-02-10T22:42:20.372709Z",
+    "level": "INFO",
+    "message": "Raw response body from subgraph \"animal\" received",
+    "http.response.body": "{\"data\":{\"dog\":{\"id\":\"4321\",\"name\":\"Spot\"}}}",
+    "apollo.subgraph.name": "animal",
+    "target": "apollo_router::services::subgraph_service",
+    "filename": "apollo-router/src/services/subgraph_service.rs",
+    "line_number": 392,
+    "span": {
+      "apollo.subgraph.name": "animal",
+      "graphql.document": "query dog__animal__0{dog{id name}}",
+      "graphql.operation.name": "dog__animal__0",
+      "otel.kind": "INTERNAL",
+      "name": "subgraph"
+    },
+    "spans": [
+      { "http.flavor": "HTTP/1.1", "http.method": "POST", "http.route": "/", "otel.kind": "SERVER", "name": "request" },
+      {
+        "apollo_private.http.request_headers": "{}",
+        "client.name": "",
+        "client.version": "",
+        "http.flavor": "HTTP/1.1",
+        "http.method": "POST",
+        "http.route": "/",
+        "otel.kind": "INTERNAL",
+        "trace_id": "d5c829d3c83ea3b301652c253257d7c8",
+        "name": "router"
+      },
+      {
+        "apollo_private.field_level_instrumentation_ratio": 0.01,
+        "apollo_private.graphql.variables": "{}",
+        "graphql.document": "query dog {\n  dog {\n    ... on Animal {\n      id\n      # __typename\n      ... on Dog {\n        name\n      }\n    }\n  }\n}\n",
+        "graphql.operation.name": "dog",
+        "otel.kind": "INTERNAL",
+        "name": "supergraph"
+      },
+      { "otel.kind": "INTERNAL", "name": "execution" },
+      {
+        "apollo.subgraph.name": "animal",
+        "apollo_private.sent_time_offset": 16202757,
+        "otel.kind": "INTERNAL",
+        "name": "fetch"
+      },
+      {
+        "apollo.subgraph.name": "animal",
+        "graphql.document": "query dog__animal__0{dog{id name}}",
+        "graphql.operation.name": "dog__animal__0",
+        "otel.kind": "INTERNAL",
+        "name": "subgraph"
+      }
+    ]
+  },
+  {
+    "timestamp": "2023-02-10T22:42:20.372968Z",
+    "level": "INFO",
+    "message": "Supergraph GraphQL response",
+    "http.response.body": "Response { label: None, data: Some(Object({\"dog\": Object({\"id\": String(\"4321\")})})), path: None, errors: [], extensions: {\"apolloQueryPlan\": Object({\"object\": Object({\"kind\": String(\"QueryPlan\"), \"node\": Object({\"kind\": String(\"Fetch\"), \"serviceName\": String(\"animal\"), \"variableUsages\": Array([]), \"operation\": String(\"query dog__animal__0{dog{id name}}\"), \"operationName\": String(\"dog__animal__0\"), \"operationKind\": String(\"query\"), \"id\": Null, \"inputRewrites\": Null, \"outputRewrites\": Null})}), \"text\": String(\"QueryPlan {\\n  Fetch(service: \\\"animal\\\") {\\n    {\\n      dog {\\n        id\\n        name\\n      }\\n    }\\n  },\\n}\")})}, has_next: None, subselection: None, incremental: [] }",
+    "target": "apollo_router::plugins::telemetry",
+    "filename": "apollo-router/src/plugins/telemetry/mod.rs",
+    "line_number": 353,
+    "span": {
+      "apollo_private.http.request_headers": "{}",
+      "client.name": "",
+      "client.version": "",
+      "http.flavor": "HTTP/1.1",
+      "http.method": "POST",
+      "http.route": "/",
+      "otel.kind": "INTERNAL",
+      "trace_id": "d5c829d3c83ea3b301652c253257d7c8",
+      "name": "router"
+    },
+    "spans": [
+      { "http.flavor": "HTTP/1.1", "http.method": "POST", "http.route": "/", "otel.kind": "SERVER", "name": "request" },
+      {
+        "apollo_private.http.request_headers": "{}",
+        "client.name": "",
+        "client.version": "",
+        "http.flavor": "HTTP/1.1",
+        "http.method": "POST",
+        "http.route": "/",
+        "otel.kind": "INTERNAL",
+        "trace_id": "d5c829d3c83ea3b301652c253257d7c8",
+        "name": "router"
+      }
+    ]
+  }
+]

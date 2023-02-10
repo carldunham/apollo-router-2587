@@ -9,4 +9,4 @@ supergraph: ./supergraph.graphqls
 
 .PHONY: run
 run: ./supergraph.graphqls
-	APOLLO_TELEMETRY_DISABLED=true ./router --dev --supergraph ./supergraph.graphqls
+	APOLLO_TELEMETRY_DISABLED=true ./router --dev --supergraph ./supergraph.graphqls --config router.yaml
